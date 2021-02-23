@@ -1,0 +1,89 @@
+Git Commands :- 
+
+---
+sudo yum install git.
+---
+git init
+git config --global --add color.ui true.
+git config --global user.name ""
+git config --global user.email ""
+
+git config --list
+
+git add (., *, filename)
+git commit -m "message......"
+
+git reflog
+
+git log(History)
+git log --abbrev-commit (for short commit ID)
+git log --oneline --graph --decorate
+git log --since="3 days ago"
+git log --filename
+git log --follow --filePath
+
+git show
+
+notepad++ ~/.gitconfig
+
+---------------------------- Alias ----------------------------
+git config --global alias.history "log --oneline --graph --decorate"
+
+---------------------------- Branches----------------------------
+git branch
+git branch -a 
+git branch branchName -> for creating a new branch
+git checkout branchName -> for checkout in a new branch
+git branch -m existingBranchName NewBranchName -> For renaming a branchName
+git branch -d branchName -> For deleteing a branch
+
+git checkout -b branchName -> this will create and switch in a new branch
+
+git diff branchName1 branchName2 -> for checking difference in branches
+git difftool branchName1 branchName2 -> for checking difference on UI
+
+git merge targetedBranchName -> For fast forword merge in master branch
+
+git merge targetedBranchName --no-ff -> For do not allow fast forword merge in master branch
+
+git merge targetedBranchName -m "Message" -> AUtomatic branch merge in master branch
+
+git mergetool -> This merge tool is p4mergeTool for resolving conflict using cisual ui
+
+---------------------------- Rebase----------------------------
+git rebase SourceBranchName -> SourceBranchName which you want to rebase in your local branch
+git rebase --abort -> This command is aborting the rebase if conflict occurs.
+git mergetool
+git rebase --continue -> This command is used after resolveing the confilict when we rebase if conflict occurs.
+
+git fetch origin master
+git pull --rebase origin master
+
+---------------------------- Stash----------------------------
+git stash -> Used to stash the file from working directory
+git statsh apply -> this command used for get back the changed from stash in working directory
+git stash list -> List of stash
+git stash drop -> This command delete the last stash
+git stash -u -> This command is used for stash untracked files.
+git stash pop -> applied stash including drop stash id's also.
+
+git stash save "message" -> message for save stash
+git stash show stash@{1} -> show stashed file using stash id
+git stash apply stash@{1} -> apply stash using stash id
+git stash drop stash@{1} -> drop stash using stash id
+git stash clear -> clear stash stack
+
+git stash branch branchName -> this command apply stash changes in newly created branch and then the stash is dropped off.
+
+---------------------------- Tagging ----------------------------
+git tag tagname -> create tag
+git tag --list -> list of tag
+git show tagname -> show tag details
+git tag --delete tagname -> delte tag
+
+Annotated Tag**
+git tag -a tagname -> tag is used for major milestones or release versions in source code.
+
+--------------------------
+** directly clone repository from github without creating folder.
+git clone https://github.com/mohitOO9/learninggit.git
